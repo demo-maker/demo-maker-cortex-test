@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= name %></title>
+    <% if(obj.mochaJs){ %>
+    <script src="<%= mochaJs %>"></script>
+    <% }else{ %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mocha/1.20.1/mocha.js"></script>
+    <% } %>
+    <script><%= neuron %></script>
+    <script>
+        var global = window;
+        neuron.config({
+            path: "<%= modpath %>",
+            graph: <%= JSON.stringify(graph) %>,
+            loaded:["<%= name %>@<%= version %>"]
+        });
+    </script>
+    <% if(obj.mochaCss){ %>
+    <link rel="stylesheet" href="<%= mochaCss %>">
+    <% }else{ %>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/mocha/1.20.1/mocha.css">
+    <% } %>
+</head>
+<body>
+    <div id="mocha"></div>
+    <%= html %>
+    <script>
+
+    mocha.NO_CATCH_EXCEPTIONS = true;
+    !window.PHANTOMJS && mocha.setup("bdd");
+    <%= scripts %>
+    _use("<%= name %>@<%= version %>",function(){
+        mocha.run();
+    });
+
+
+    </script>
+</body>
+</html>

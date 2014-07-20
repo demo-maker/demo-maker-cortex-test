@@ -13,7 +13,7 @@
   "keywords": [
     "demo-maker-cortex-test"
   ],
-  "engines": { 
+  "engines": {
     "node": ">=0.11.0"
   },
   "author": "supersheep",
@@ -24,5 +24,11 @@
   "devDependencies": {
     "mocha": "*",
     "chai": "*"
+  },
+  "dependencies": {
+    "neuron-graph": "~0.2.0",
+    "neuron-builder": "~4.0.1",
+    "neuronjs": "~8.0.5",
+    "underscore": "~1.6.0"
   }
 }
