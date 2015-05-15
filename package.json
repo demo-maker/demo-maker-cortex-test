@@ -1,6 +1,6 @@
 {
   "name": "demo-maker-cortex-test",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "demo-maker-cortex-test",
   "main": "index.js",
   "scripts": {
