@@ -26,7 +26,8 @@ function generateGraph(config){
       cwd: config.cwd,
       dependencyKeys: ["dependencies","devDependencies","asyncDependencies"],
       built_root: path.join(config.cwd, 'neurons'),
-      ignore_shrink_file: true
+      ignore_shrink_file: true,
+      stable_only: config.stable_only
     }, function(err, graph, shrinktree){
       done(err, graph);
     });
@@ -54,7 +55,8 @@ exports.render = function(data, done){
     }),
     generateGraph({
       cwd: options.cwd,
-      pkg: options.pkg
+      pkg: options.pkg,
+      stable_only: options.stable_only == 'false' ? false : true
     }),
     readNeuronContent
   ], function(err, results) {

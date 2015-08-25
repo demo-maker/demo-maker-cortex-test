@@ -1,6 +1,6 @@
 {
   "name": "demo-maker-cortex-test",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "demo-maker-cortex-test",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "chai": "*"
   },
   "dependencies": {
+    "async": "^0.9.0",
     "neuron-builder": "~4.0.1",
     "neuron-graph": "~0.2.0",
     "neuronjs": "^8.2.2",
